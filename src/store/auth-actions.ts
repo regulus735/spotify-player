@@ -11,9 +11,12 @@ export const fetchAuthToken = createAsyncThunk<IAuth, string>(
    'auth/fetchAuthToken',
 
    async (code, thunkApi) => {
-      const { data, status } = await axios.post('http://localhost:3001/login', {
-         code,
-      });
+      const { data, status } = await axios.post(
+         'https://regulus735-spotify-server.herokuapp.com/login',
+         {
+            code,
+         }
+      );
 
       if (status === 400) return thunkApi.rejectWithValue(null);
 
@@ -26,7 +29,7 @@ export const refreshAuthToken = createAsyncThunk<IRefreshAuthData, string>(
 
    async (refreshToken, thunkApi) => {
       const { data, status } = await axios.post(
-         'http://localhost:3001/refresh',
+         'https://regulus735-spotify-server.herokuapp.com/refresh',
          {
             refreshToken,
          }
