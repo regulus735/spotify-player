@@ -23,7 +23,7 @@ const authSlice = createSlice({
       builder.addCase(fetchAuthToken.fulfilled, (state, { payload }) => {
          localStorage.setItem('spotifyToken', payload.accessToken);
 
-         window.history.pushState({}, '', '/');
+         window.history.pushState({}, '', '/spotify-player');
          return { ...payload };
       });
       builder.addCase(fetchAuthToken.rejected, () => {
