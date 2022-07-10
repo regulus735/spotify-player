@@ -7,7 +7,7 @@ const URL =
 const Login: React.FC = () => {
    return (
       <main className="login-page">
-         <h1>Spotify Playlists Player</h1>
+         <h1>Spotify Player</h1>
          <a href={URL}>Log in</a>
       </main>
    );
