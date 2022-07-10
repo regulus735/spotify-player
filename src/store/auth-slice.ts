@@ -27,14 +27,14 @@ const authSlice = createSlice({
          return { ...payload };
       });
       builder.addCase(fetchAuthToken.rejected, () => {
-         win.location = '/';
+         win.location = '/spotify-player';
       });
 
       builder.addCase(refreshAuthToken.fulfilled, (state, { payload }) => {
          return { ...state, ...payload };
       });
       builder.addCase(refreshAuthToken.rejected, () => {
-         win.location = '/';
+         win.location = '/spotify-player';
       });
    },
 });
