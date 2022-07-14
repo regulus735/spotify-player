@@ -15,4 +15,5 @@ export default interface ITrack {
          }
       ];
    };
+   duration_ms: string;
 }
